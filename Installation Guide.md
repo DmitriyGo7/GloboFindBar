@@ -127,7 +127,11 @@ Change is made in "omni from browser" folder.
 
 The modification is in file (browser)\omni\chrome\browser\content\browser\parent\ext-browser.js (MAKE SURE it is a "parent" folder, NOT "child", as there is "ext-browser.js" in "child" folder as well)
 
-Function emitActivated(nativeTab, previousTab = undefined) {
+Function 
+
+``` JavaScript
+emitActivated(nativeTab, previousTab = undefined) {
+```
 
 Right in its beginning (in the next string) you should add block
 
