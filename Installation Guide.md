@@ -40,12 +40,14 @@ Here is the guide https://www.webnots.com/how-to-disable-automatic-update-in-fir
 
 In short, go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), create a new folder in "Mozilla Firefox" folder, name it "distribution". Create a new text file in "distribution" folder. Paste
 
+```
 {
 "policies":
    {
      "DisableAppUpdate": true
     }
 }
+```
 
 in that file, save it, make sure file name extensions are visible in Windows Explorer, then rename the file to "policies.json".
 
@@ -71,11 +73,15 @@ The modification is in file omni\chrome\toolkit\content\global\elements\findbar.
 
 after string
 
+```
 let val = value || this._findField.value;
+```
 
 you should add string
 
+```
 window._globalFindText = val; 		//GloboFindBar
+```
 
 CHANGE #2:
 
@@ -85,23 +91,33 @@ Change is made in "omni from browser" folder. That is NOT "omni from root" from 
 
 The modification is in file (browser)\omni\chrome\browser\content\browser\tabbrowser\tabbrowser.js
 
-Function async _createFindBar(aTab) {
+Function 
+
+```
+async _createFindBar(aTab) {
+```
 
 after string
 
+```
 findBar.browser = browser;
+```
 
 you should replace string
 
+```
 findBar._findField.value = this._lastFindValue;
+```
 
 to block
 
+``` JavaScript
 	  if (typeof window._globalFindText !== 'undefined') { 		//GloboFindBar+
 		  findBar._findField.value = window._globalFindText;
 	  } else {							//GloboFindBar-
 		  findBar._findField.value = this._lastFindValue;
 	  }
+```
 
 CHANGE #3:
 
