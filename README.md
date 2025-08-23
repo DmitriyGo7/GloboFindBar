@@ -13,6 +13,10 @@ You'll have to disable Firefox updates and you'll have to stay on obsolete versi
 
 ___________________________________
 
+INSTALLATION: read Installation Guide.md
+
+___________________________________
+
 HISTORICAL PERSPECTIVE:
 
 Opera Presto had an ability to put its FindBar on toolbar, to be permanently visible at all times. It was a per window FindBar (like GloboFindBar). That was super convenient.
