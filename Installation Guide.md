@@ -92,7 +92,7 @@ Change is made in "omni from browser" folder. That is NOT "omni from root" from 
 
 The modification is in file (browser)\omni\chrome\browser\content\browser\tabbrowser\tabbrowser.js
 
-Function 
+In function 
 
 ``` JavaScript
 async _createFindBar(aTab) {
