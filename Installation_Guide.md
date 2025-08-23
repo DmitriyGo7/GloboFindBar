@@ -54,7 +54,7 @@ in that file, save it, make sure file name extensions are visible in Windows Exp
 
 STEP 3: Unpack both omni.ja files like they are ZIP archives.
 
-Go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), copy "omni.ja" file and paste it somewhere in unprotected user data folder like in Desktop. Rename the coped file to "omni from root.zip". Extract its contents with WinRAR (other archiver programs will probably work, but I only tested with WinRAR).
+Go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), copy "omni.ja" file and paste it somewhere in unprotected user data folder like in Desktop. Make sure file name extensions are visible in Windows Explorer, and rename the coped file to "omni from root.zip". Extract its contents with WinRAR (other archiver programs will probably work, but I only tested with WinRAR).
 
 Then go from Firefox install folder to its "browser" subfolder (for example C:\Program Files\Mozilla Firefox\browser ). There is a second "omni.ja" file in it. A different one, so MAKE SURE you don't mix things up! Copy this "omni.ja" file and paste it somewhere in unprotected user data folder as well. Rename the coped file to "omni from browser.zip". Extract its contents with WinRAR.
 
