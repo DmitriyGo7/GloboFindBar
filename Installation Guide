@@ -23,11 +23,13 @@ in that file, save it, make sure file name extensions are visible in Windows Exp
 
 STEP 3: not yet written.
 
+STEP 4: Clear cache - not yet written.
+
 ___________________________________
 
 OPTION 2: Make code changes yourself.
 
-STEP 1: Have any Firefox version you want already installed. I've only tested these code changes in Firefox ESR 140.1.0 and 140.2.0 on Windows, so I can't guarantee that they will work on other, newer or older versions of Firefox. I would expect them to work on all desktop operating systems, and I would think they will probably work for a couple years or maybe a bit more in future versions of Firefox, but I can't know for sure.
+STEP 1: Have any Firefox version you want already installed. I've only tested these code changes in Firefox ESR 140.1.0 and 140.2.0 (August 2025) on Windows, so I can't guarantee that they will work on other, newer or older versions of Firefox. I would expect them to work on all desktop operating systems, and I would think they will probably work for a couple years or maybe a bit more in future versions of Firefox, but I can't know for sure.
 
 STEP 2: Disable Firefox auto updates.
 
@@ -44,4 +46,73 @@ In short, go to Firefox install folder (for example C:\Program Files\Mozilla Fir
 
 in that file, save it, make sure file name extensions are visible in Windows Explorer, then rename the file to "policies.json".
 
-STEP 3:
+STEP 3: Unpack both omni.ja files like they are ZIP archives.
+
+Go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), copy "omni.ja" file and paste it somewhere in unprotected user data folder like in Desktop. Rename the coped file to "omni from root.zip". Extract its contents with WinRAR (other archiver programs will probably work, but I only tested with WinRAR).
+
+Then go from Firefox install folder to its "browser" subfolder (for example C:\Program Files\Mozilla Firefox\browser ). There is a second "omni.ja" file in it. A different one, so MAKE SURE you don't mix things up! Copy this "omni.ja" file and paste it somewhere in unprotected user data folder as well. Rename the coped file to "omni from browser.zip". Extract its contents with WinRAR.
+
+STEP 4: Make code changes.
+
+You can use Notepad or Notepad++ to open, modify and save *.js files with program code like they are ordinary text files.
+
+HERE ARE THE CHANGES IN DETAIL:
+
+CHANGE №1:
+
+Goal: Every time a string in FindBar is changed by user (character is added or deleted, or the whole string is pasted or deleted), the search in page gets launched automatically. In the beginning of that search we store the searched string in window-scoped variable.
+
+Change is made in "omni from root" folder.
+
+The modification is in file omni\chrome\toolkit\content\global\elements\findbar.js
+
+after string
+
+let val = value || this._findField.value;
+
+you should add string
+
+window._globalFindText = val; 		//GloboFindBar
+
+CHANGE №2:
+
+Goal: In FindBar constructor, which is called when user presses Ctrl+F or F3 for the first time in current tab, we place in its input field the string we stored earlier in window-scoped variable, if it is defined.
+
+Change is made in "omni from browser" folder. That is NOT "omni from root" from previous step!
+
+The modification is in file (browser)\omni\chrome\browser\content\browser\tabbrowser\tabbrowser.js
+
+Function async _createFindBar(aTab) {
+
+after string
+
+findBar.browser = browser;
+
+you should replace string
+
+findBar._findField.value = this._lastFindValue;
+
+to block
+
+	  if (typeof window._globalFindText !== 'undefined') { 		//GloboFindBar+
+		  findBar._findField.value = window._globalFindText;
+	  } else {							//GloboFindBar-
+		  findBar._findField.value = this._lastFindValue;
+	  }
+
+CHANGE №3:
+
+Goal: When user activates a tab for any reason (by clicking on it, creating it, or it became active (current) after closing another tab), if FindBar already exists (constructed) in that tab, then we place in its input field the string we stored earlier in window-scoped variable, if it is defined.
+
+Change is made in "omni from browser" folder.
+
+The modification is in file (browser)\omni\chrome\browser\content\browser\parent\ext-browser.js (MAKE SURE it is a "parent" folder, NOT "child", as there is "ext-browser.js" in "child" folder as well)
+
+Function emitActivated(nativeTab, previousTab = undefined) {
+
+Right in its beginning (in the next string) you should add block
+
+	if ((typeof nativeTab._findBar !== 'undefined') && (typeof nativeTab.ownerGlobal._globalFindText !== 'undefined')) {		//GloboFindBar+
+		nativeTab._findBar._findField.value = nativeTab.ownerGlobal._globalFindText;
+	}																//GloboFindBar-
+
