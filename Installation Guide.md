@@ -142,7 +142,7 @@ Right in its beginning (in the next string) you should add block
 	}																//GloboFindBar-
 ```
 
-That's it, basically just 5 or 6 lines of code if you don't count lines with curly brackets make FindBar global!
+That's it, basically just 5 or 6 lines of code, if you don't count lines with curly brackets, make FindBar global!
 
 STEP 5: Pack again and replace original omni.ja files.
 
