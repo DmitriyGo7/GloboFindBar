@@ -60,7 +60,7 @@ Then go from Firefox install folder to its "browser" subfolder (for example C:\P
 
 STEP 4: Make code changes.
 
-You can use Notepad or Notepad++ to open, modify and save *.js files with program code like they are ordinary text files.
+You can use Notepad or Notepad++ to open, modify and save *.js files with program code like they are ordinary text files. I used Notepad++.
 
 HERE ARE THE CHANGES IN DETAIL:
 
