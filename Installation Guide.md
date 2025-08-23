@@ -45,7 +45,7 @@ In short, go to Firefox install folder (for example C:\Program Files\Mozilla Fir
 "policies":
    {
      "DisableAppUpdate": true
-    }
+   }
 }
 ```
 
@@ -73,13 +73,13 @@ The modification is in file omni\chrome\toolkit\content\global\elements\findbar.
 
 after string
 
-```
+``` JavaScript
 let val = value || this._findField.value;
 ```
 
 you should add string
 
-```
+``` JavaScript
 window._globalFindText = val; 		//GloboFindBar
 ```
 
@@ -93,19 +93,19 @@ The modification is in file (browser)\omni\chrome\browser\content\browser\tabbro
 
 Function 
 
-```
+``` JavaScript
 async _createFindBar(aTab) {
 ```
 
 after string
 
-```
+``` JavaScript
 findBar.browser = browser;
 ```
 
 you should replace string
 
-```
+``` JavaScript
 findBar._findField.value = this._lastFindValue;
 ```
 
@@ -131,9 +131,11 @@ Function emitActivated(nativeTab, previousTab = undefined) {
 
 Right in its beginning (in the next string) you should add block
 
+``` JavaScript
 	if ((typeof nativeTab._findBar !== 'undefined') && (typeof nativeTab.ownerGlobal._globalFindText !== 'undefined')) {		//GloboFindBar+
 		nativeTab._findBar._findField.value = nativeTab.ownerGlobal._globalFindText;
 	}																//GloboFindBar-
+```
 
 That's it, basically just 5 or 6 lines of code if you don't count lines with curly brackets make FindBar global!
 
