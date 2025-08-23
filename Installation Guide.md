@@ -12,14 +12,14 @@ Here is the guide https://www.webnots.com/how-to-disable-automatic-update-in-fir
 
 In short, go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), create a new folder in "Mozilla Firefox" folder, name it "distribution". Create a new text file in "distribution" folder. Paste
 
-'''
+```
 {
 "policies":
    {
      "DisableAppUpdate": true
     }
 }
-'''
+```
 
 in that file, save it, make sure file name extensions are visible in Windows Explorer, then rename the file to "policies.json".
 
