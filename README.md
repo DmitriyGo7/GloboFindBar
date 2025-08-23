@@ -13,7 +13,7 @@ You'll have to disable Firefox updates and you'll have to stay on obsolete versi
 
 ___________________________________
 
-INSTALLATION: read [a relative link](Installation Guide.md)
+INSTALLATION: read [a relative link](InstallationGuide.md)
 
 ___________________________________
 
