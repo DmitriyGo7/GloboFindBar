@@ -1,4 +1,4 @@
-You should choose how to install GloboFindBar. You can simply download the exact Firefox version that I am using from Mozilla, and replace two of its files with files prepared by me with all the necessary changes already made in them. Or, if you want to use a newer Firefox version, or if you don't trust me, you can make changes to code yourself as described below (in section "Option 2").
+You should choose how to install GloboFindBar. You can simply download from Mozilla the exact Firefox version that I am using, and replace two of its files with files prepared by me with all the necessary changes already made in them. Or, if you want to use a newer Firefox version, or if you don't trust me, you can make changes to code yourself as described below (in section "Option 2").
 
 ___________________________________
 
