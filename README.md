@@ -8,6 +8,7 @@ Technically, GloboFindBar simply substitutes search string in input field in Fin
 ___________________________________
 
 HISTORICAL PERSPECTIVE:
+
 Opera Presto had an ability to put its FindBar on toolbar, to be permanently visible at all times. It was a per window FindBar (like GloboFindBar). That was super convenient.
 
 Firefox had a per window FindBar until version 25, when Firefox developers somehow saw per tab FindBar as more logical, probably in attempt to mindlessly copy Chrome like they always do. https://bugzilla.mozilla.org/show_bug.cgi?id=537013
@@ -26,4 +27,5 @@ If its author will be able to fix all bugs, and it will be possible to map exten
 ___________________________________
 
 THE DRAWBACK:
+
 You'll have to disable Firefox updates and you'll have to stay on obsolete version of Firefox. If you update even once, the update process will replace both omni.ja files in which changes have been made, so you'll have to manually apply code changes again (it is only several minutes of work, but I'd imagine it will very quickly become tiresome even for me to do it at least each month).
