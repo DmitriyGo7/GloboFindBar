@@ -72,6 +72,12 @@ Change is made in "omni from root" folder.
 
 The modification is in file omni\chrome\toolkit\content\global\elements\findbar.js
 
+In function 
+
+``` JavaScript
+_find(value) {
+```
+
 after string
 
 ``` JavaScript
@@ -134,7 +140,7 @@ In function
 emitActivated(nativeTab, previousTab = undefined) {
 ```
 
-Right in its beginning (in the next string) you should add block
+right in its beginning (in the next string) you should add block
 
 ``` JavaScript
 	if ((typeof nativeTab._findBar !== 'undefined') && (typeof nativeTab.ownerGlobal._globalFindText !== 'undefined')) {		//GloboFindBar+
@@ -146,7 +152,7 @@ That's it, basically just 5 or 6 lines of code, if you don't count lines with cu
 
 STEP 5: Pack again and replace original omni.ja files.
 
-I used WinRAR successfully. Select all files and folders inside your unpacked omni folder, right click and select "Add to archive...", in WinRAR window that appears select Archive format: ZIP and Compression method: None, press OK. The most important thing here is not to compress by right clicking omni folder itself. Select all items inside of it instead. There must be no "omni" root folder inside the created archive, its contents should show up immediately instead.
+I used WinRAR successfully. Select all files and folders inside your unpacked omni folder, right click and select "Add to archive...", in WinRAR window that appears select Archive format: ZIP and Compression method: None, press OK. The most important thing here is NOT to compress by right clicking omni folder itself. Select all items inside of it instead. There must be no "omni" root folder inside the created archive, its contents should show up immediately instead.
 
 Compress both omni folders this way, and place them back in C:\Program Files\Mozilla Firefox and C:\Program Files\Mozilla Firefox\browser correspondingly. While Firefox is not open, MAKE A BACKUP of original omni.ja files by renaming them somehow in case something goes wrong, then rename "omni from root.zip" and "omni from browser.zip" back to "omni.ja".
 
