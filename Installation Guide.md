@@ -17,7 +17,7 @@ In short, go to Firefox install folder (for example C:\Program Files\Mozilla Fir
 "policies":
    {
      "DisableAppUpdate": true
-    }
+   }
 }
 ```
 
