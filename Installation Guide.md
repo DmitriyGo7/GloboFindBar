@@ -29,7 +29,7 @@ ___________________________________
 
 OPTION 2: Make code changes yourself.
 
-STEP 1: Have any Firefox version you want already installed. I've only tested these code changes in Firefox ESR 140.1.0 and 140.2.0 (August 2025) on Windows, so I can't guarantee that they will work on other, newer or older versions of Firefox. I would expect them to work on all desktop operating systems, and I would think they will probably work for a couple years or maybe a bit more in future versions of Firefox, but I can't know for sure.
+STEP 1: Have any Firefox version you want already installed. I've only tested these code changes in Firefox ESR 140.1.0 and 140.2.0 (August 2025) on Windows, so I can't guarantee that they will work on other, newer or older versions of Firefox. I expect them to work on all desktop operating systems, and I think they will probably work for a couple years or maybe longer in future versions of Firefox, but I can't know for sure.
 
 STEP 2: Disable Firefox auto updates.
 
@@ -58,7 +58,7 @@ You can use Notepad or Notepad++ to open, modify and save *.js files with progra
 
 HERE ARE THE CHANGES IN DETAIL:
 
-CHANGE №1:
+CHANGE #1:
 
 Goal: Every time a string in FindBar is changed by user (character is added or deleted, or the whole string is pasted or deleted), the search in page gets launched automatically. In the beginning of that search we store the searched string in window-scoped variable.
 
@@ -74,7 +74,7 @@ you should add string
 
 window._globalFindText = val; 		//GloboFindBar
 
-CHANGE №2:
+CHANGE #2:
 
 Goal: In FindBar constructor, which is called when user presses Ctrl+F or F3 for the first time in current tab, we place in its input field the string we stored earlier in window-scoped variable, if it is defined.
 
@@ -100,7 +100,7 @@ to block
 		  findBar._findField.value = this._lastFindValue;
 	  }
 
-CHANGE №3:
+CHANGE #3:
 
 Goal: When user activates a tab for any reason (by clicking on it, creating it, or it became active (current) after closing another tab), if FindBar already exists (constructed) in that tab, then we place in its input field the string we stored earlier in window-scoped variable, if it is defined.
 
@@ -115,4 +115,14 @@ Right in its beginning (in the next string) you should add block
 	if ((typeof nativeTab._findBar !== 'undefined') && (typeof nativeTab.ownerGlobal._globalFindText !== 'undefined')) {		//GloboFindBar+
 		nativeTab._findBar._findField.value = nativeTab.ownerGlobal._globalFindText;
 	}																//GloboFindBar-
+
+That's it, basically just 5 or 6 lines of code if you don't count lines with curly brackets make FindBar global!
+
+STEP 5: Pack again and replace omni.ja files.
+
+I used WinRAR successfully. Select all files and folders inside your unpacked omni folder, right click and select "Add to archive...", in WinRAR window that appears select Archive format: ZIP and Compression method: None, press OK. The most important thing here is not to compress by right clicking omni folder itself. Select all items inside of it instead. There must be no "omni" root folder inside the created archive, its contents should show up immediately instead.
+
+Compress both omni folders this way, and place them back in C:\Program Files\Mozilla Firefox and C:\Program Files\Mozilla Firefox\browser correspondingly. While Firefox is not open, MAKE A BACKUP of original omni.ja files by renaming them somehow in case something goes wrong, then rename "omni from root.zip" and "omni from browser.zip" back to "omni.ja".
+
+STEP 6: Clear launch cache
 
