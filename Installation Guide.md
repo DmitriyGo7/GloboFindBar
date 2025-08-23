@@ -1,4 +1,4 @@
-You should choose how to install GloboFindBar. You can simply download the exact Firefox version that I am using, and replace two of its files with files prepared by me with all the necessary changes already made in them. Or, if you want to use a newer Firefox version, or if you don't trust me, you can make changes to code yourself as described below (in section "Option 2").
+You should choose how to install GloboFindBar. You can simply download the exact Firefox version that I am using from Mozilla, and replace two of its files with files prepared by me with all the necessary changes already made in them. Or, if you want to use a newer Firefox version, or if you don't trust me, you can make changes to code yourself as described below (in section "Option 2").
 
 ___________________________________
 
@@ -23,7 +23,8 @@ in that file, save it, make sure file name extensions are visible in Windows Exp
 
 STEP 3: not yet written.
 
-STEP 4: Clear cache - not yet written.
+STEP 4: Clear startup cache.
+Click on three horizontal bars (hamburger) button in the top right corner of Firefox window, choose "Help" in menu, then "More troubleshooting information", then click "Clear startup cache..." button on the right side of the window, and confirm restart. DON'T FORGET TO DO THAT EVERY TIME YOU CHANGE ANY OF THE FIREFOX CODE, otherwise changes will not apply.
 
 ___________________________________
 
@@ -124,5 +125,7 @@ I used WinRAR successfully. Select all files and folders inside your unpacked om
 
 Compress both omni folders this way, and place them back in C:\Program Files\Mozilla Firefox and C:\Program Files\Mozilla Firefox\browser correspondingly. While Firefox is not open, MAKE A BACKUP of original omni.ja files by renaming them somehow in case something goes wrong, then rename "omni from root.zip" and "omni from browser.zip" back to "omni.ja".
 
-STEP 6: Clear launch cache
+STEP 6: Clear startup cache.
+Click on three horizontal bars (hamburger) button in the top right corner of Firefox window, choose "Help" in menu, then "More troubleshooting information", then click "Clear startup cache..." button on the right side of the window, and confirm restart. DON'T FORGET TO DO THAT EVERY TIME YOU CHANGE ANY OF THE FIREFOX CODE, otherwise changes will not apply.
 
+That is all.
