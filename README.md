@@ -18,10 +18,14 @@ But then Mozilla stopped supporting XUL/XPCOM extensions since Firefox 57, so si
 
 Palemoon intentionally reverted back to per window findbar since version 28.1, and even gave users a choice. User can set about:config value "findbar.termPerTab" to "true" if per tab findbar is desired. Unfortunately, Palemoon has low compatibility with modern web sites, and is extremely slow.
 
-There actually is an extension written for modern Manifest v3 extensions platform for Firefox and Chrome, a great idea, that also can act as a global FindBar, called "Multi Find: Search, Highlight, Explore" - https://addons.mozilla.org/firefox/addon/multi-find-search-highlight/ and https://chromewebstore.google.com/detail/multi-find-search-and-hig/dffaiikpbncahnghlfnkhagffaemhgfo
+There actually is an extension written for modern Manifest v3 extensions platform for Firefox and Chrome, a great idea, that also can act as a global FindBar, called "Multi Find: Search, Highlight, Explore" - https://addons.mozilla.org/firefox/addon/multi-find-search-highlight/ and https://chromewebstore.google.com/detail/multi-find-search-and-hig/dffaiikpbncahnghlfnkhagffaemhgfo . 
+
 It has useful additional functionality: user can search for multiple phrases at once, highlighting each phrase in its own color.
+
 Unfortunately, I found it buggy or working unreliably on certain rare websites (for example Twitch), especially after a page has dynamically loaded further (infinite scrolling).
+
 Also it is not possible to map it to Ctrl+F on Firefox, although it is possible on Chrome. Enter or F3 also do not work as expected from standard FindBar.
+
 If its author will be able to fix all bugs, and it will be possible to map extensions to default hotkeys in Firefox, GloboFindBar will not be needed any more.
 
 ___________________________________
