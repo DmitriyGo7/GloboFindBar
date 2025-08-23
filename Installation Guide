@@ -1,0 +1,47 @@
+You should choose how to install GloboFindBar. You can simply download the exact Firefox version that I am using, and replace two of its files with files prepared by me with all the necessary changes already made in them. Or, if you want to use a newer Firefox version, or if you don't trust me, you can make changes to code yourself as described below (in section "Option 2").
+
+___________________________________
+
+OPTION 1: Use omni.ja files prepared by me for a specific Firefox version.
+
+STEP 1: Download and install Firefox ESR 140.2.0 - https://ftp.mozilla.org/pub/firefox/releases/140.2.0esr/ .
+
+STEP 2: Disable Firefox auto updates.
+
+Here is the guide https://www.webnots.com/how-to-disable-automatic-update-in-firefox/ - use method 2 or method 3.
+
+In short, go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), create a new folder in "Mozilla Firefox" folder, name it "distribution". Create a new text file in "distribution" folder. Paste
+
+{
+"policies":
+   {
+     "DisableAppUpdate": true
+    }
+}
+
+in that file, save it, make sure file name extensions are visible in Windows Explorer, then rename the file to "policies.json".
+
+STEP 3: not yet written.
+
+___________________________________
+
+OPTION 2: Make code changes yourself.
+
+STEP 1: Have any Firefox version you want already installed. I've only tested these code changes in Firefox ESR 140.1.0 and 140.2.0 on Windows, so I can't guarantee that they will work on other, newer or older versions of Firefox. I would expect them to work on all desktop operating systems, and I would think they will probably work for a couple years or maybe a bit more in future versions of Firefox, but I can't know for sure.
+
+STEP 2: Disable Firefox auto updates.
+
+Here is the guide https://www.webnots.com/how-to-disable-automatic-update-in-firefox/ - use method 2 or method 3.
+
+In short, go to Firefox install folder (for example C:\Program Files\Mozilla Firefox ), create a new folder in "Mozilla Firefox" folder, name it "distribution". Create a new text file in "distribution" folder. Paste
+
+{
+"policies":
+   {
+     "DisableAppUpdate": true
+    }
+}
+
+in that file, save it, make sure file name extensions are visible in Windows Explorer, then rename the file to "policies.json".
+
+STEP 3:
