@@ -26,6 +26,7 @@ in that file, save it, make sure file name extensions are visible in Windows Exp
 STEP 3: Replace omni.ja files.
 
 Download "omni.from.root.for.Firefox.ESR.140.2.0.ja" from Releases page and place it in Firefox install folder (for example C:\Program Files\Mozilla Firefox ). While Firefox is not open, delete or rename to some other name the old "omni.ja" file, and rename the downloaded file to "omni.ja".
+
 Download "omni.from.browser.for.Firefox.ESR.140.2.0.ja" from Releases page and place it in "browser" subfolder of Firefox install folder (for example C:\Program Files\Mozilla Firefox\browser ). While Firefox is not open, delete or rename to some other name the old "omni.ja" file, and rename the downloaded file to "omni.ja".
 
 STEP 4: Clear startup cache.
