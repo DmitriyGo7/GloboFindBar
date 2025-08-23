@@ -1,5 +1,5 @@
 # GloboFindBar
-Makes search string entered in Firefox's findbar (Ctrl+F, find in page) be the same in all tabs inside a single window.
+GloboFindBar makes search string entered in Firefox's findbar (Ctrl+F, find in page) be the same in all tabs inside a single window.
 
 GloboFindBar is a set of very small changes in Firefox browser's internal JS files which results in its FindBar (which is a panel called by pressing Ctrl+F or F3) no longer remembering search string, entered by user, per tab. Instead, GloboFindBar makes the search string that user entered the last time show up in any other tab as a suggested string for launching search in page. It does not launch the search automatically, so search highlights from user's last search are preserved until user manually initiates a new search in page.
 
