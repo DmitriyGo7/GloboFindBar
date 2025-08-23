@@ -144,7 +144,7 @@ Right in its beginning (in the next string) you should add block
 
 That's it, basically just 5 or 6 lines of code if you don't count lines with curly brackets make FindBar global!
 
-STEP 5: Pack again and replace omni.ja files.
+STEP 5: Pack again and replace original omni.ja files.
 
 I used WinRAR successfully. Select all files and folders inside your unpacked omni folder, right click and select "Add to archive...", in WinRAR window that appears select Archive format: ZIP and Compression method: None, press OK. The most important thing here is not to compress by right clicking omni folder itself. Select all items inside of it instead. There must be no "omni" root folder inside the created archive, its contents should show up immediately instead.
 
